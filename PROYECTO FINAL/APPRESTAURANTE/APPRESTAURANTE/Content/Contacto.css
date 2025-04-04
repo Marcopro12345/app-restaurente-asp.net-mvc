@@ -1,0 +1,128 @@
+﻿/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+    background-color: ghostwhite;
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+    header .logo img {
+        width: 100px;
+        height: auto;
+    }
+
+    header nav ul {
+        list-style: none;
+        padding: 10px;
+    }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+            header nav ul li a {
+                color: white;
+                text-decoration: none;
+            }
+
+/* Sección de contacto */
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: white;
+}
+
+.contact-info {
+    width: 45%;
+}
+
+    .contact-info h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .contact-info .address,
+    .contact-info .phone,
+    .contact-info .email {
+        margin-bottom: 20px;
+    }
+
+.contact-form {
+    width: 45%;
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+    .contact-form h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .contact-form label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .contact-form button {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .contact-form button:hover {
+            background-color: #555;
+        }
+
+/* Mapa */
+.map-container {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.map {
+    width: 100%;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}

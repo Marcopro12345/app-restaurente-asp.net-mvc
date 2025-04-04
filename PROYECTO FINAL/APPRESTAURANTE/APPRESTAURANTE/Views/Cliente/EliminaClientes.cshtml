@@ -1,0 +1,71 @@
+﻿@model APPRESTAURANTE.Models.M_Cliente
+
+@{
+    ViewBag.Title = "Eliminar Clientes";
+}
+
+<h2>Eliminar Cliente</h2>
+
+<h3>Está seguro que desea eliminar este cliente del sistema? </h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellidos)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.correo_electronico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correo_electronico)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("Acciones", "cliente", FormMethod.Post, new { enctype = "multipart/form-data", @id = "frmClientes" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(w => w.id, new { @id = "hdnId" })
+
+        @Html.HiddenFor(w => w.nombre, new { @id = "hdnId" })
+
+        @Html.HiddenFor(w => w.apellidos, new { @id = "hdnId" })
+
+
+
+
+
+
+        <div class="form-actions no-color">
+            <button type="submit" id="btnEliminar" name="submitButton" value="Eliminar" class="btn btn-primary"
+                    title="Agregar" data-toggle="tooltip" data-container="body"
+                    data-placement="right">
+                Eliminar
+            </button>
+            @Html.ActionLink("Regresar", "ListClientes")
+        </div>
+    }
+</div>

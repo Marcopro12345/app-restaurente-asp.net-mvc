@@ -1,0 +1,25 @@
+﻿.hero {
+    background: url('') no-repeat center center;
+   
+    background-image: url('../../imagenes/backgroun1.png');
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+.menu-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.navbar-nav {
+    margin-left: auto; 
+}

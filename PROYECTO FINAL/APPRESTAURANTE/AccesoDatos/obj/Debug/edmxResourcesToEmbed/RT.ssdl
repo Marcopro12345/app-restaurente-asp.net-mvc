@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="clientes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellidos" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="telefono" Type="nvarchar" MaxLength="15" />
+    <Property Name="correo_electronico" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mesas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="numero_mesa" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="reservaciones">
+    <Key>
+      <PropertyRef Name="numero_reservacion" />
+    </Key>
+    <Property Name="numero_reservacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_cliente" Type="int" />
+    <Property Name="numero_mesa" Type="int" />
+    <Property Name="id_menu" Type="int" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+    <Property Name="fecha_reservacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Restaurante.dbo.vw_HistorialReservaciones' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_HistorialReservaciones">
+    <Key>
+      <PropertyRef Name="numero_reservacion" />
+      <PropertyRef Name="fecha_reservacion" />
+      <PropertyRef Name="cliente" />
+      <PropertyRef Name="numero_mesa" />
+      <PropertyRef Name="menu" />
+    </Key>
+    <Property Name="numero_reservacion" Type="int" Nullable="false" />
+    <Property Name="fecha_reservacion" Type="datetime" Nullable="false" />
+    <Property Name="cliente" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="numero_mesa" Type="int" Nullable="false" />
+    <Property Name="menu" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Restaurante.dbo.vw_MenuPrecios' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_MenuPrecios">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="descripcion" />
+      <PropertyRef Name="precio" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Restaurante.dbo.vw_OcupacionMesas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_OcupacionMesas">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="numero_mesa" />
+      <PropertyRef Name="estado" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="numero_mesa" Type="int" Nullable="false" />
+    <Property Name="estado" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Restaurante.dbo.vw_ReservacionesDetalles' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_ReservacionesDetalles">
+    <Key>
+      <PropertyRef Name="numero_reservacion" />
+      <PropertyRef Name="fecha_reservacion" />
+      <PropertyRef Name="cliente" />
+      <PropertyRef Name="menu" />
+      <PropertyRef Name="precio" />
+    </Key>
+    <Property Name="numero_reservacion" Type="int" Nullable="false" />
+    <Property Name="fecha_reservacion" Type="datetime" Nullable="false" />
+    <Property Name="cliente" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="menu" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="numero_mesa" Type="int" />
+  </EntityType>
+  <Association Name="FK__reservaci__id_cl__4AB81AF0">
+    <End Role="clientes" Type="Self.clientes" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="reservaciones" Type="Self.reservaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clientes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="reservaciones">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__reservaci__id_me__4CA06362">
+    <End Role="menu" Type="Self.menu" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="reservaciones" Type="Self.reservaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="menu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="reservaciones">
+        <PropertyRef Name="id_menu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__reservaci__numer__4BAC3F29' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__reservaci__numer__4BAC3F29" />-->
+  <Function Name="PA_delCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PA_delMenu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PA_delMesa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PA_delReservacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numero_reservacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PA_insCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="apellidos" Type="nvarchar" Mode="In" />
+    <Parameter Name="telefono" Type="nvarchar" Mode="In" />
+    <Parameter Name="correo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="PA_insMenu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="descripcion" Type="nvarchar" Mode="In" />
+    <Parameter Name="precio" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="PA_insMesa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numero_mesa" Type="int" Mode="In" />
+    <Parameter Name="descripcion" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="PA_insReservacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_cliente" Type="int" Mode="In" />
+    <Parameter Name="numero_mesa" Type="int" Mode="In" />
+    <Parameter Name="id_menu" Type="int" Mode="In" />
+    <Parameter Name="cantidad" Type="int" Mode="In" />
+    <Parameter Name="fecha_reservacion" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="PA_modCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="apellidos" Type="nvarchar" Mode="In" />
+    <Parameter Name="telefono" Type="nvarchar" Mode="In" />
+    <Parameter Name="correo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="PA_modMenu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="descripcion" Type="nvarchar" Mode="In" />
+    <Parameter Name="precio" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="PA_modMesa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="numero_mesa" Type="int" Mode="In" />
+    <Parameter Name="descripcion" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="PA_modReservacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numero_reservacion" Type="int" Mode="In" />
+    <Parameter Name="id_cliente" Type="int" Mode="In" />
+    <Parameter Name="numero_mesa" Type="int" Mode="In" />
+    <Parameter Name="id_menu" Type="int" Mode="In" />
+    <Parameter Name="cantidad" Type="int" Mode="In" />
+    <Parameter Name="fecha_reservacion" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="PA_recCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="PA_recClienteXId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PA_recMenu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="PA_recMenuXId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PA_recMesa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="PA_recMesaXId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PA_recReservacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="PA_recReservacionXId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numero_reservacion" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="RTModelStoreContainer">
+    <EntitySet Name="clientes" EntityType="Self.clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="menu" EntityType="Self.menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesas" EntityType="Self.mesas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="reservaciones" EntityType="Self.reservaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vw_HistorialReservaciones" EntityType="Self.vw_HistorialReservaciones" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_HistorialReservaciones].[numero_reservacion] AS [numero_reservacion], 
+    [vw_HistorialReservaciones].[fecha_reservacion] AS [fecha_reservacion], 
+    [vw_HistorialReservaciones].[cliente] AS [cliente], 
+    [vw_HistorialReservaciones].[numero_mesa] AS [numero_mesa], 
+    [vw_HistorialReservaciones].[menu] AS [menu]
+    FROM [dbo].[vw_HistorialReservaciones] AS [vw_HistorialReservaciones]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_MenuPrecios" EntityType="Self.vw_MenuPrecios" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_MenuPrecios].[id] AS [id], 
+    [vw_MenuPrecios].[descripcion] AS [descripcion], 
+    [vw_MenuPrecios].[precio] AS [precio]
+    FROM [dbo].[vw_MenuPrecios] AS [vw_MenuPrecios]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_OcupacionMesas" EntityType="Self.vw_OcupacionMesas" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_OcupacionMesas].[id] AS [id], 
+    [vw_OcupacionMesas].[numero_mesa] AS [numero_mesa], 
+    [vw_OcupacionMesas].[estado] AS [estado]
+    FROM [dbo].[vw_OcupacionMesas] AS [vw_OcupacionMesas]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_ReservacionesDetalles" EntityType="Self.vw_ReservacionesDetalles" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_ReservacionesDetalles].[numero_reservacion] AS [numero_reservacion], 
+    [vw_ReservacionesDetalles].[fecha_reservacion] AS [fecha_reservacion], 
+    [vw_ReservacionesDetalles].[cliente] AS [cliente], 
+    [vw_ReservacionesDetalles].[menu] AS [menu], 
+    [vw_ReservacionesDetalles].[precio] AS [precio], 
+    [vw_ReservacionesDetalles].[numero_mesa] AS [numero_mesa]
+    FROM [dbo].[vw_ReservacionesDetalles] AS [vw_ReservacionesDetalles]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__reservaci__id_cl__4AB81AF0" Association="Self.FK__reservaci__id_cl__4AB81AF0">
+      <End Role="clientes" EntitySet="clientes" />
+      <End Role="reservaciones" EntitySet="reservaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__reservaci__id_me__4CA06362" Association="Self.FK__reservaci__id_me__4CA06362">
+      <End Role="menu" EntitySet="menu" />
+      <End Role="reservaciones" EntitySet="reservaciones" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<APPRESTAURANTE.Models.M_Reservacion>
+
+@{
+    ViewBag.Title = "Lista Reservaciones";
+}
+
+<h2>Reservaciones</h2>
+
+<p>
+    @Html.ActionLink("Crear una Reservación", "AgregarReservaciones")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.numero_reservacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numero_mesa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_menu)
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_reservacion)
+        </th>
+
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.numero_reservacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modeLitem => item.id_cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.numero_mesa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.id_menu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.fecha_reservacion)
+            </td>
+            <td>
+
+                @Html.ActionLink("Actualizar", "ModificaReservaciones", new { id = item.numero_reservacion })
+
+                @Html.ActionLink("Eliminar", "EliminaReservaciones", new { id = item.numero_reservacion })
+            </td>
+        </tr>
+    }
+
+</table>

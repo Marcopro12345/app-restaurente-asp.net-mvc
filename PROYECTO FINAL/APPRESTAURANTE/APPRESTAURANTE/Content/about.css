@@ -1,0 +1,32 @@
+﻿
+.about-section {
+    background-color: whitesmoke;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+    .about-section h2 {
+        color: gold;
+        font-family: 'Times New Roman', sans-serif;
+        font-size: 32px;
+        font-weight: bold;
+    }
+.about-section h3{
+    color:black;
+}
+
+    .about-section p {
+        color: #555;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+.about-section img {
+    border-radius: 10px;
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+

@@ -1,0 +1,57 @@
+﻿@model APPRESTAURANTE.Models.M_Mesa
+
+@{
+    ViewBag.Title = "Eliminar Mesas";
+}
+
+<h2>Elimina Mesa </h2>
+
+<h3>Está seguro que desea eliminar esta Mesa? </h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numero_mesa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numero_mesa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("Acciones", "Mesa", FormMethod.Post, new { enctype = "multipart/form-data", @id = "frmMesas" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(w => w.id, new { @id = "hdnId" })
+
+        @Html.HiddenFor(w => w.numero_mesa, new { @id = "hdnId" })
+
+        @Html.HiddenFor(w => w.descripcion, new { @id = "hdnId" })
+
+
+
+
+
+
+        <div class="form-actions no-color">
+            <button type="submit" id="btnEliminar" name="submitButton" value="Eliminar" class="btn btn-primary"
+                    title="Agregar" data-toggle="tooltip" data-container="body"
+                    data-placement="right">
+                Eliminar
+            </button>
+            @Html.ActionLink("Regresar", "ListMesas")
+        </div>
+    }
+</div>

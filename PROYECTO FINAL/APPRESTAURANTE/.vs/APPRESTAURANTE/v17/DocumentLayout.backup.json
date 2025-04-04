@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Docentes\\Desktop\\PROYECTO FINAL\\APPRESTAURANTE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C21E545C-7FBD-441C-A856-8BD7DF0EA59F}|APPRESTAURANTE\\APPRESTAURANTE.csproj|c:\\users\\docentes\\desktop\\proyecto final\\apprestaurante\\apprestaurante\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C21E545C-7FBD-441C-A856-8BD7DF0EA59F}|APPRESTAURANTE\\APPRESTAURANTE.csproj|solutionrelative:apprestaurante\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D65A261-BEEE-4391-8FAF-EAA4BED46157}|LogicaNegocio\\LogicaNegocio.csproj|c:\\users\\docentes\\desktop\\proyecto final\\apprestaurante\\logicanegocio\\interfaces\\iclienteln.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D65A261-BEEE-4391-8FAF-EAA4BED46157}|LogicaNegocio\\LogicaNegocio.csproj|solutionrelative:logicanegocio\\interfaces\\iclienteln.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D65A261-BEEE-4391-8FAF-EAA4BED46157}|LogicaNegocio\\LogicaNegocio.csproj|C:\\Users\\Docentes\\Desktop\\PROYECTO FINAL\\APPRESTAURANTE\\logicanegocio\\implementacion\\clienteln.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D65A261-BEEE-4391-8FAF-EAA4BED46157}|LogicaNegocio\\LogicaNegocio.csproj|solutionrelative:logicanegocio\\implementacion\\clienteln.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{480FEB7D-4C3E-44F2-86E3-FD68DA589823}|AccesoDatos\\AccesoDatos.csproj|c:\\users\\docentes\\desktop\\proyecto final\\apprestaurante\\accesodatos\\interfaces\\iclientead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{480FEB7D-4C3E-44F2-86E3-FD68DA589823}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\interfaces\\iclientead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{480FEB7D-4C3E-44F2-86E3-FD68DA589823}|AccesoDatos\\AccesoDatos.csproj|C:\\Users\\Docentes\\Desktop\\PROYECTO FINAL\\APPRESTAURANTE\\accesodatos\\implementacion\\clientead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{480FEB7D-4C3E-44F2-86E3-FD68DA589823}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\implementacion\\clientead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\Docentes\\Desktop\\PROYECTO FINAL\\APPRESTAURANTE\\APPRESTAURANTE\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "APPRESTAURANTE\\Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\Docentes\\Desktop\\PROYECTO FINAL\\APPRESTAURANTE\\APPRESTAURANTE\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "APPRESTAURANTE\\Controllers\\ClienteController.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAYwNwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T13:32:30.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IClienteLN.cs",
+              "DocumentMoniker": "C:\\Users\\Docentes\\Desktop\\PROYECTO FINAL\\APPRESTAURANTE\\LogicaNegocio\\Interfaces\\IClienteLN.cs",
+              "RelativeDocumentMoniker": "LogicaNegocio\\Interfaces\\IClienteLN.cs",
+              "ToolTip": "C:\\Users\\Docentes\\Desktop\\PROYECTO FINAL\\APPRESTAURANTE\\LogicaNegocio\\Interfaces\\IClienteLN.cs",
+              "RelativeToolTip": "LogicaNegocio\\Interfaces\\IClienteLN.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T03:33:38.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClienteLN.cs",
+              "DocumentMoniker": "C:\\Users\\Docentes\\Desktop\\PROYECTO FINAL\\APPRESTAURANTE\\LogicaNegocio\\Implementacion\\ClienteLN.cs",
+              "RelativeDocumentMoniker": "LogicaNegocio\\Implementacion\\ClienteLN.cs",
+              "ToolTip": "C:\\Users\\Docentes\\Desktop\\PROYECTO FINAL\\APPRESTAURANTE\\LogicaNegocio\\Implementacion\\ClienteLN.cs",
+              "RelativeToolTip": "LogicaNegocio\\Implementacion\\ClienteLN.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAwwEkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T21:22:02.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IClienteAD.cs",
+              "DocumentMoniker": "C:\\Users\\Docentes\\Desktop\\PROYECTO FINAL\\APPRESTAURANTE\\AccesoDatos\\Interfaces\\IClienteAD.cs",
+              "RelativeDocumentMoniker": "AccesoDatos\\Interfaces\\IClienteAD.cs",
+              "ToolTip": "C:\\Users\\Docentes\\Desktop\\PROYECTO FINAL\\APPRESTAURANTE\\AccesoDatos\\Interfaces\\IClienteAD.cs",
+              "RelativeToolTip": "AccesoDatos\\Interfaces\\IClienteAD.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T17:23:47.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ClienteAD.cs",
+              "DocumentMoniker": "C:\\Users\\Docentes\\Desktop\\PROYECTO FINAL\\APPRESTAURANTE\\AccesoDatos\\Implementacion\\ClienteAD.cs",
+              "RelativeDocumentMoniker": "AccesoDatos\\Implementacion\\ClienteAD.cs",
+              "ToolTip": "C:\\Users\\Docentes\\Desktop\\PROYECTO FINAL\\APPRESTAURANTE\\AccesoDatos\\Implementacion\\ClienteAD.cs",
+              "RelativeToolTip": "AccesoDatos\\Implementacion\\ClienteAD.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T21:38:22.05Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

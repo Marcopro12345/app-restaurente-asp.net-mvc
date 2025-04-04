@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RTModelStoreContainer" CdmEntityContainer="RTEntities">
+    <EntitySetMapping Name="clientes">
+      <EntityTypeMapping TypeName="RTModel.cliente">
+        <MappingFragment StoreEntitySet="clientes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo_electronico" ColumnName="correo_electronico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="menus">
+      <EntityTypeMapping TypeName="RTModel.menu">
+        <MappingFragment StoreEntitySet="menu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesas">
+      <EntityTypeMapping TypeName="RTModel.mesa">
+        <MappingFragment StoreEntitySet="mesas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="numero_mesa" ColumnName="numero_mesa" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reservaciones">
+      <EntityTypeMapping TypeName="RTModel.reservacione">
+        <MappingFragment StoreEntitySet="reservaciones">
+          <ScalarProperty Name="numero_reservacion" ColumnName="numero_reservacion" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="numero_mesa" ColumnName="numero_mesa" />
+          <ScalarProperty Name="id_menu" ColumnName="id_menu" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="fecha_reservacion" ColumnName="fecha_reservacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_HistorialReservaciones">
+      <EntityTypeMapping TypeName="RTModel.vw_HistorialReservaciones">
+        <MappingFragment StoreEntitySet="vw_HistorialReservaciones">
+          <ScalarProperty Name="numero_reservacion" ColumnName="numero_reservacion" />
+          <ScalarProperty Name="fecha_reservacion" ColumnName="fecha_reservacion" />
+          <ScalarProperty Name="cliente" ColumnName="cliente" />
+          <ScalarProperty Name="numero_mesa" ColumnName="numero_mesa" />
+          <ScalarProperty Name="menu" ColumnName="menu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_MenuPrecios">
+      <EntityTypeMapping TypeName="RTModel.vw_MenuPrecios">
+        <MappingFragment StoreEntitySet="vw_MenuPrecios">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_OcupacionMesas">
+      <EntityTypeMapping TypeName="RTModel.vw_OcupacionMesas">
+        <MappingFragment StoreEntitySet="vw_OcupacionMesas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="numero_mesa" ColumnName="numero_mesa" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_ReservacionesDetalles">
+      <EntityTypeMapping TypeName="RTModel.vw_ReservacionesDetalles">
+        <MappingFragment StoreEntitySet="vw_ReservacionesDetalles">
+          <ScalarProperty Name="numero_reservacion" ColumnName="numero_reservacion" />
+          <ScalarProperty Name="fecha_reservacion" ColumnName="fecha_reservacion" />
+          <ScalarProperty Name="cliente" ColumnName="cliente" />
+          <ScalarProperty Name="menu" ColumnName="menu" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="numero_mesa" ColumnName="numero_mesa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="PA_delCliente" FunctionName="RTModel.Store.PA_delCliente" />
+    <FunctionImportMapping FunctionImportName="PA_delMenu" FunctionName="RTModel.Store.PA_delMenu" />
+    <FunctionImportMapping FunctionImportName="PA_delMesa" FunctionName="RTModel.Store.PA_delMesa" />
+    <FunctionImportMapping FunctionImportName="PA_delReservacion" FunctionName="RTModel.Store.PA_delReservacion" />
+    <FunctionImportMapping FunctionImportName="PA_insCliente" FunctionName="RTModel.Store.PA_insCliente" />
+    <FunctionImportMapping FunctionImportName="PA_insMenu" FunctionName="RTModel.Store.PA_insMenu" />
+    <FunctionImportMapping FunctionImportName="PA_insMesa" FunctionName="RTModel.Store.PA_insMesa" />
+    <FunctionImportMapping FunctionImportName="PA_insReservacion" FunctionName="RTModel.Store.PA_insReservacion" />
+    <FunctionImportMapping FunctionImportName="PA_modCliente" FunctionName="RTModel.Store.PA_modCliente" />
+    <FunctionImportMapping FunctionImportName="PA_modMenu" FunctionName="RTModel.Store.PA_modMenu" />
+    <FunctionImportMapping FunctionImportName="PA_modMesa" FunctionName="RTModel.Store.PA_modMesa" />
+    <FunctionImportMapping FunctionImportName="PA_modReservacion" FunctionName="RTModel.Store.PA_modReservacion" />
+    <FunctionImportMapping FunctionImportName="PA_recCliente" FunctionName="RTModel.Store.PA_recCliente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RTModel.PA_recCliente_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo_electronico" ColumnName="correo_electronico" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PA_recClienteXId" FunctionName="RTModel.Store.PA_recClienteXId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RTModel.PA_recClienteXId_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo_electronico" ColumnName="correo_electronico" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PA_recMenu" FunctionName="RTModel.Store.PA_recMenu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RTModel.PA_recMenu_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PA_recMenuXId" FunctionName="RTModel.Store.PA_recMenuXId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RTModel.PA_recMenuXId_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PA_recMesa" FunctionName="RTModel.Store.PA_recMesa">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RTModel.PA_recMesa_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="numero_mesa" ColumnName="numero_mesa" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PA_recMesaXId" FunctionName="RTModel.Store.PA_recMesaXId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RTModel.PA_recMesaXId_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="numero_mesa" ColumnName="numero_mesa" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PA_recReservacion" FunctionName="RTModel.Store.PA_recReservacion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RTModel.PA_recReservacion_Result">
+          <ScalarProperty Name="numero_reservacion" ColumnName="numero_reservacion" />
+          <ScalarProperty Name="fecha_reservacion" ColumnName="fecha_reservacion" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="numero_mesa" ColumnName="numero_mesa" />
+          <ScalarProperty Name="id_menu" ColumnName="id_menu" />
+          <ScalarProperty Name="menu" ColumnName="menu" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PA_recReservacionXId" FunctionName="RTModel.Store.PA_recReservacionXId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RTModel.PA_recReservacionXId_Result">
+          <ScalarProperty Name="numero_reservacion" ColumnName="numero_reservacion" />
+          <ScalarProperty Name="fecha_reservacion" ColumnName="fecha_reservacion" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="numero_mesa" ColumnName="numero_mesa" />
+          <ScalarProperty Name="id_menu" ColumnName="id_menu" />
+          <ScalarProperty Name="menu" ColumnName="menu" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

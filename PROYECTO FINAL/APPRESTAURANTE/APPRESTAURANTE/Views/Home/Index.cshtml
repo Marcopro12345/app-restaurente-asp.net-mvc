@@ -1,0 +1,81 @@
+﻿@{ ViewData["Title"] = "Inicio"; }
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+    <link rel="stylesheet"type="text/css" href="~/Content/Site.css"/>
+    
+</head>
+<body>
+
+    <header class="hero text-center">
+        <h1 class="display-4">Zeus Gourmet </h1>
+    </header>
+
+    <center>
+        <div class="container my-5">
+
+            <h2 class="text-center">Nuestro Menú</h2>
+            <div class="col-md-3">
+                <a href="@Url.Action("MenuCompleto", "Home")" class="btn btn-secondary">Ver Menú</a>
+            </div>
+    </center>
+
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-4 menu-item text-center">
+
+
+
+
+
+            <img src="~/Imagenes/especial.png" />
+            <h4>Plato Especial</h4>
+            <p>₡7,000</p>
+        </div>
+        <div class="col-md-4 menu-item text-center">
+
+
+            <img src="~/Imagenes/pinto2.png" />
+            <h4>Delicia Gourmet</h4>
+            <p>₡3,500</p>
+        </div>
+        <div class="col-md-4 menu-item text-center">
+
+            <img src="~/Imagenes/platoexquisito.png" />
+            <h4>Sabor Exquisito</h4>
+            <p>₡11,000</p>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+    <div class="row">
+        <div class="col-md-3">
+            <a href="@Url.Action("ListClientes", "Cliente")" class="btn btn-secondary">Registrate como Cliente</a>
+        </div>
+        <div class="col-md-3">
+            <a href="@Url.Action("ListMenus", "Menu")" class="btn btn-secondary">Armá tu Menú</a>
+        </div>
+        <div class="col-md-3">
+            <a href="@Url.Action("ListMesas", "Mesa")" class="btn btn-secondary">Escogé tu Mesa</a>
+        </div>
+        <div class="col-md-3">
+            <a href="@Url.Action("ListReservaciones", "Reservacion")" class="btn btn-secondary">Haz tu Reservación</a>
+        </div>
+    </div>
+    <br />
+    <br />
+    <footer class="bg-dark text-white text-center py-3">
+        <p> Restaurante - Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
